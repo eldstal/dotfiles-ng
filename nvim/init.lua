@@ -28,41 +28,18 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd.colorscheme "melange"
 
 --
--- Cool plugins and their settings
+-- Cool plugins
 --
-require("nvim-tree").setup({
-	renderer = {
-          special_files = {},
-          indent_markers = { enable = true },
-          icons = {
-            show = {
-              folder_arrow = true,
-            },
-            glyphs = {
-              default = "🗎",
-              folder = {
-                default = "📁",
-                open = "📁",
-                empty = "📁",
-                empty_open = "📁",
-                arrow_closed = "˃",
-                arrow_open = "v",
-              },
-            },
-          },
-	}
-})
-
--- Auto-close if the file browser is the last thing open
-vim.api.nvim_create_autocmd("BufEnter", {
-  nested = true,
-  callback = function()
-    if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
-      vim.cmd "quit"
-    end
-  end
-})
-
+require("nvim-tree")
+    -- Auto-close if the file browser is the last thing open
+    vim.api.nvim_create_autocmd("BufEnter", {
+      nested = true,
+      callback = function()
+        if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
+          vim.cmd "quit"
+        end
+      end
+    })
 
 --
 -- Custom key mappings
@@ -72,6 +49,7 @@ vim.keymap.set('n', '§', ":NvimTreeFindFileToggle<cr>")
 vim.keymap.set({'n', 'i', 'c'}, '<F1>', ":tabprev<cr>")
 vim.keymap.set({'n', 'i', 'c'}, '<F2>', ":tabnext<cr>")
 
+-- Search, search everywhere
 local tele = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', tele.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', tele.live_grep, { desc = 'Telescope live grep' })

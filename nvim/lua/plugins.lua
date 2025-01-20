@@ -1,13 +1,6 @@
 return {
     -- Useful stuff
     { "farmergreg/vim-lastplace" },
-    { "nvim-tree/nvim-tree.lua" },
-
-    {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.8',
-        dependencies = { 'nvim-lua/plenary.nvim' }
-    },
 
     -- Colorschemes
     { "phha/zenburn.nvim" },
