@@ -20,3 +20,4 @@ function put {
 
 
 put nvim ~/.config/nvim
+put alacritty.toml ~/.alacritty.toml
