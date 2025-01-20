@@ -6,6 +6,8 @@ function put {
   local SOURCE=$1
   local DEST=$2
 
+  local DESTDIR=$(dirname "${DEST}")
+
   # We're ok with overwriting links
   [ -L "${DEST}" ] && rm "${DEST}"
 
@@ -14,6 +16,8 @@ function put {
     return
   fi
 
+  [ -d "${DESTDIR}" ] || mkdir -v -p ${DESTDIR}
+
   ln -sfv "${DOTFILES}/${SOURCE}" "${DEST}"
 
 }
@@ -21,3 +25,7 @@ function put {
 
 put nvim ~/.config/nvim
 put alacritty.toml ~/.alacritty.toml
+
+
+put fontconfig/80-terminalfont.conf ~/.config/fontconfig/conf.d/80-terminalfont.conf
+fc-cache --verbose --really-force

@@ -3,12 +3,25 @@
 history = 100000
 
 [env]
-WINIT_X11_SCALE_FACTOR= "1"
+#WINIT_X11_SCALE_FACTOR= "1"
 
 [font]
-normal = { family = "Fira Mono", style = "regular" }
-bold = { family = "Fira Mono", style = "regular" }
-size = 9
+
+# This relies on a fontconfig custom family named "terminal-font"
+# You can use that to have a main font and a fallback emoji font.
+# This one relies on you having installed
+#  ttf-jetbrains-mono, ttf-noto-emoji and 80-terminalfont.conf
+# and run fc-cache --really-force
+normal = { family = "terminal-font", style = "Light" }
+bold = { family = "terminal-font", style = "Regular" }
+
+# Fallbacks:
+#normal = { family = "JetBrains Mono NL", style = "regular" }
+#bold = { family = "JetBrains Mono NL", style = "regular" }
+
+#normal = { family = "Fira Mono", style = "regular" }
+#bold = { family = "Fira Mono", style = "regular" }
+size = 11
 
 [selection]
 save_to_clipboard = true

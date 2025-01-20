@@ -7,16 +7,16 @@ return {
             indent_markers = { enable = true },
             icons = {
               show = {
-                folder_arrow = true,
+                folder_arrow = false,
               },
               glyphs = {
-                default = "🗎",
+                default = "📄",
                 folder = {
                   default = "📁",
-                  open = "📁",
+                  open = "📂",
                   empty = "📁",
-                  empty_open = "📁",
-                  arrow_closed = "˃",
+                  empty_open = "📂",
+                  arrow_closed = ">",
                   arrow_open = "v",
                 },
               },
