@@ -6,6 +6,9 @@ history = 100000
 WINIT_X11_SCALE_FACTOR= "1"
 
 [font]
+# Override this on a per-system basis by adding command line arguments
+# -o font.size = 10
+size = 11
 
 # This relies on a fontconfig custom family named "terminal-font"
 # You can use that to have a main font and a fallback emoji font.
@@ -21,7 +24,6 @@ bold = { family = "terminal-font", style = "Regular" }
 
 #normal = { family = "Fira Mono", style = "regular" }
 #bold = { family = "Fira Mono", style = "regular" }
-size = 11
 
 [selection]
 save_to_clipboard = true

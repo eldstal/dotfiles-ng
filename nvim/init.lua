@@ -3,6 +3,13 @@ vim.g.mapleader = "<Space>"
 -- Package manager!
 require("config.lazy")
 
+-- Just auto-update my plugins on startup, OK?
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback=function()
+		require"lazy".update({ show=false })
+	end
+})
+
 -- Needed for some themes
 vim.o.termguicolors = true
 
