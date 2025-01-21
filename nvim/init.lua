@@ -53,8 +53,8 @@ require("nvim-tree")
 --
 vim.keymap.set('n', '§', ":NvimTreeFindFileToggle<cr>")
 
-vim.keymap.set({'n', 'i', 'c'}, '<F1>', ":tabprev<cr>")
-vim.keymap.set({'n', 'i', 'c'}, '<F2>', ":tabnext<cr>")
+vim.keymap.set({'n', 'c'}, '<F1>', ":tabprev<cr>")
+vim.keymap.set({'n', 'c'}, '<F2>', ":tabnext<cr>")
 
 -- Search, search everywhere
 local tele = require('telescope.builtin')
@@ -62,6 +62,12 @@ vim.keymap.set('n', '<leader>ff', tele.find_files, { desc = 'Telescope find file
 vim.keymap.set('n', '<leader>fg', tele.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', tele.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', tele.help_tags, { desc = 'Telescope help tags' })
+
+-- LSP and code completion and such
+vim.keymap.set('n', '<leader>n', vim.lsp.buf.rename, { desc = 'Rename symbol' })
+--vim.keymap.set({'n', 'i'}, '<C-Space>', vim.lsp.omnifunc, { desc = 'Autocomplete' })
+vim.api.nvim_set_keymap('i', '<C-Space>', '<C-x><C-o>', {noremap = true})
+
 
 --
 -- Formatting settings
@@ -71,6 +77,18 @@ vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.scrolloff = 5
 vim.o.mouse = ""
+
+-- Don't move my line numbers around for diagnostic markers
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN] = '',
+            [vim.diagnostic.severity.INFO] = '',
+            [vim.diagnostic.severity.HINT] = '',
+        }
+    }
+})
 
 --
 -- Display settings for code (default)
