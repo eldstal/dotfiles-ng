@@ -1,0 +1,15 @@
+return {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {},
+    modes = { 'n', 'i' },
+    keys = {
+        {
+            "<C-x>?",
+            function()
+                require("which-key").show({ global = false })
+            end,
+            desc = "Show which-key popup"
+        }
+    }
+}
