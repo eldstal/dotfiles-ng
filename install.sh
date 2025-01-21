@@ -22,10 +22,10 @@ function put {
 
 }
 
+put fontconfig/80-terminalfont.conf ~/.config/fontconfig/conf.d/80-terminalfont.conf
+fc-cache --verbose --really-force
 
 put nvim ~/.config/nvim
 put alacritty.toml ~/.alacritty.toml
+put tmux.conf ~/.tmux.conf
 
-
-put fontconfig/80-terminalfont.conf ~/.config/fontconfig/conf.d/80-terminalfont.conf
-fc-cache --verbose --really-force
