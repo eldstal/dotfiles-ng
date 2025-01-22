@@ -1,9 +1,8 @@
 return {
     "neovim/nvim-lspconfig",
     config = function()
-        lsp = require("lspconfig")
+        local lsp = require("lspconfig")
 
-        
         lsp.clangd.setup({}) -- C/C++
         lsp.denols.setup({}) -- JS
         lsp.jdtls.setup({}) -- Java
@@ -12,5 +11,6 @@ return {
         lsp.html.setup({}) -- HTML
         lsp.gopls.setup({}) -- Go
         lsp.pyright.setup({}) -- python
+        lsp.yamlls.setup({}) -- YAML
     end
 }
