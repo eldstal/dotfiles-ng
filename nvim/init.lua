@@ -67,10 +67,18 @@ vim.keymap.set('n', '<leader>fg', tele.live_grep, { desc = 'Telescope live grep'
 vim.keymap.set('n', '<leader>fb', tele.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', tele.help_tags, { desc = 'Telescope help tags' })
 
+
 -- LSP and code completion and such
 vim.keymap.set('n', '<leader>n', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 --vim.keymap.set({'n', 'i'}, '<C-Space>', vim.lsp.omnifunc, { desc = 'Autocomplete' })
 vim.api.nvim_set_keymap('i', '<C-Space>', '<C-x><C-o>', {noremap = true})
+
+-- Use ctrl+q to send the Telecope results to a quickfix list
+-- Then these to skip back and forth between quickfix lists
+vim.keymap.set('n', '<leader><F1>', ':colder<cr>', { desc = 'Quick-fix history older' })
+vim.keymap.set('n', '<leader><F2>', ':cnewer<cr>', { desc = 'Quick-fix history newer' })
+vim.keymap.set('n', '<C-PageUp>', ':cprev<cr>', { desc = 'Quick-fix next' })
+vim.keymap.set('n', '<C-PageDown>', ':cnext<cr>', { desc = 'Quick-fix previous' })
 
 
 --
