@@ -56,6 +56,10 @@ vim.keymap.set('n', '§', ":NvimTreeFindFileToggle<cr>")
 vim.keymap.set({'n', 'c'}, '<F1>', ":tabprev<cr>")
 vim.keymap.set({'n', 'c'}, '<F2>', ":tabnext<cr>")
 
+-- Home key goes to first non-empty character
+vim.keymap.set({'n'}, '<Home>', "^")
+vim.keymap.set({'i'}, '<Home>', "<Esc>I")
+
 -- Search, search everywhere
 local tele = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', tele.find_files, { desc = 'Telescope find files' })
