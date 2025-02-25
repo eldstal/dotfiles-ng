@@ -102,6 +102,15 @@ vim.diagnostic.config({
     }
 })
 
+
+--
+-- Behavior settings
+--
+
+-- When opening a location from quickfix list, first check if the file is already open
+-- otherwise open it in a new tab
+vim.o.switchbuf="usetab,newtab"
+
 --
 -- Display settings for code (default)
 --
