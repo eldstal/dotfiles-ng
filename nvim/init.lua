@@ -80,6 +80,17 @@ vim.keymap.set('n', '<leader><F2>', ':cnewer<cr>', { desc = 'Quick-fix history n
 vim.keymap.set('n', '<C-PageUp>', ':cprev<cr>', { desc = 'Quick-fix next' })
 vim.keymap.set('n', '<C-PageDown>', ':cnext<cr>', { desc = 'Quick-fix previous' })
 
+-- Quickfix improvements (ctrl-v for vertical split, ctrl+x for horizontal split, ctrl+t for new tab)
+function qf_mode()
+    vim.keymap.set('n', '<C-x>', '<C-w><cr>', { desc = 'Quick-fix horisontal split' })
+    vim.keymap.set('n', '<C-v>', '<C-w><cr><C-w>L', { desc = 'Quick-fix vertical split' })
+    vim.keymap.set('n', '<C-t>', '<C-w><cr><C-w>T', { desc = 'Quick-fix open in tab' })
+end
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "qf" },
+    callback = qf_mode,
+})
+
 
 --
 -- Formatting settings
@@ -109,7 +120,7 @@ vim.diagnostic.config({
 
 -- When opening a location from quickfix list, first check if the file is already open
 -- otherwise open it in a new tab
-vim.o.switchbuf="usetab,newtab"
+-- vim.o.switchbuf="usetab,newtab"
 
 --
 -- Display settings for code (default)
