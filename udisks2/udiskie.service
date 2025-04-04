@@ -1,0 +1,12 @@
+# Install as ~/.config/systemd/user/udiskie.service
+# systemctl --user enable udiskie
+[Unit]
+Description=Handle automounting of usb devices
+
+[Service]
+#Type=simple
+ExecStart=/usr/bin/udiskie --tray
+Restart=always
+
+[Install]
+WantedBy=default.target
