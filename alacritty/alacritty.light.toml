@@ -1,0 +1,74 @@
+
+[scrolling]
+history = 100000
+
+[env]
+WINIT_X11_SCALE_FACTOR= "1"
+
+[font]
+# Override this on a per-system basis by adding command line arguments
+# -o font.size = 10
+size = 11
+
+# This relies on a fontconfig custom family named "terminal-font"
+# You can use that to have a main font and a fallback emoji font.
+# This one relies on you having installed
+#  ttf-jetbrains-mono, noto-fonts-emoji and 80-terminalfont.conf
+# and run fc-cache --really-force
+normal = { family = "terminal-font", style = "Light" }
+bold = { family = "terminal-font", style = "Regular" }
+
+# Fallbacks:
+#normal = { family = "JetBrains Mono NL", style = "regular" }
+#bold = { family = "JetBrains Mono NL", style = "regular" }
+
+#normal = { family = "Fira Mono", style = "regular" }
+#bold = { family = "Fira Mono", style = "regular" }
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+bindings = [
+  { mouse = "Middle", mods = "Alt", action = "Paste" },
+  ]
+
+[keyboard]
+# Can't get this thing to use the PATH for some reason. Annoying.
+bindings = [
+    { key = "d", mods = "Alt", command = "/home/albin/.local/bin/alacritty-color.sh" },
+]
+
+[window]
+opacity = 1
+#blur = true
+
+[general]
+live_config_reload = true
+[colors.primary]
+foreground = "#1f2328"
+background = "#ffffff"
+
+[colors]
+cursor = { text = "#ffffff", cursor = "#1f2328" }
+draw_bold_text_with_bright_colors = true
+
+[colors.normal]
+black   = "#24292f"
+red     = "#cf222e"
+green   = "#116329"
+yellow  = "#dbb32d"
+blue    = "#0969da"
+magenta = "#8250df"
+cyan    = "#1b7c8d"
+white   = "#6e7781"
+
+[colors.bright]
+black   = "#57606a"
+red     = "#a40e26"
+green   = "#1a7f37"
+yellow  = "#c49700"
+blue    = "#218bff"
+magenta = "#8250df"
+cyan    = "#1b7c83"
+white   = "#6e7781"

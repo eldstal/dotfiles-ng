@@ -1,0 +1,47 @@
+
+[scrolling]
+history = 100000
+
+[env]
+WINIT_X11_SCALE_FACTOR= "1"
+
+[font]
+# Override this on a per-system basis by adding command line arguments
+# -o font.size = 10
+size = 11
+
+# This relies on a fontconfig custom family named "terminal-font"
+# You can use that to have a main font and a fallback emoji font.
+# This one relies on you having installed
+#  ttf-jetbrains-mono, noto-fonts-emoji and 80-terminalfont.conf
+# and run fc-cache --really-force
+normal = { family = "terminal-font", style = "Light" }
+bold = { family = "terminal-font", style = "Regular" }
+
+# Fallbacks:
+#normal = { family = "JetBrains Mono NL", style = "regular" }
+#bold = { family = "JetBrains Mono NL", style = "regular" }
+
+#normal = { family = "Fira Mono", style = "regular" }
+#bold = { family = "Fira Mono", style = "regular" }
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+bindings = [
+  { mouse = "Middle", mods = "Alt", action = "Paste" },
+  ]
+
+[keyboard]
+# Can't get this thing to use the PATH for some reason. Annoying.
+bindings = [
+    { key = "d", mods = "Alt", command = "/home/albin/.local/bin/alacritty-color.sh" },
+]
+
+[window]
+opacity = 1
+#blur = true
+
+[general]
+live_config_reload = true

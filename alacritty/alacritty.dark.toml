@@ -33,10 +33,18 @@ bindings = [
   { mouse = "Middle", mods = "Alt", action = "Paste" },
   ]
 
+[keyboard]
+# Can't get this thing to use the PATH for some reason. Annoying.
+bindings = [
+    { key = "d", mods = "Alt", command = "/home/albin/.local/bin/alacritty-color.sh" },
+]
+
 [window]
-opacity = 0.8
+opacity = 1
 #blur = true
 
+[general]
+live_config_reload = true
 [colors.primary]
 foreground = "#cccccc"
 #background = "#2c0130"
@@ -66,6 +74,3 @@ blue    = "#96bedb"
 magenta = "#db81db"
 cyan    = "#b7f9fc"
 white   = "#ffffff"
-
-[general]
-live_config_reload = true

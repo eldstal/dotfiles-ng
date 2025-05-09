@@ -26,6 +26,9 @@ put fontconfig/80-terminalfont.conf ~/.config/fontconfig/conf.d/80-terminalfont.
 fc-cache --verbose --really-force
 
 put nvim ~/.config/nvim
-put alacritty.toml ~/.alacritty.toml
+put alacritty/alacritty.light.toml ~/.alacritty.light.toml
+put alacritty/alacritty.dark.toml ~/.alacritty.dark.toml
+put alacritty/alacritty-color.sh ~/.local/bin/alacritty-color.sh
+ln -sf ~/.alacritty.dark.toml ~/.alacritty.toml
 put tmux.conf ~/.tmux.conf
 
