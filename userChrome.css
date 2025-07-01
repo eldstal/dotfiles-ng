@@ -1,0 +1,22 @@
+/*
+ * Install as ~/.mozilla/firefox/profile-dir/chrome/userChrome.css
+ */
+
+/* hides the title bar (old solution, no worky after 2024-12*/
+#titlebar {
+    visibility: collapse;
+  }
+
+/* Hides the new toolbar */
+#TabsToolbar-customization-target {
+    visibility: collapse;
+  }
+  
+  /* hides the sidebar heading*/
+  #sidebar-header {
+    visibility: collapse !important;
+  } 
+
+  #sidebar-panel-header {
+    visibility: collapse !important;
+  } 
