@@ -337,6 +337,14 @@
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
 
+
+# Bluetooth notifications which I don't care about.
+# format = "" will make them disappear entirely.
+[bluetooth_noise]
+    appname = blueman
+    body = *Authorization request for*
+    format = ""
+
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
 #
