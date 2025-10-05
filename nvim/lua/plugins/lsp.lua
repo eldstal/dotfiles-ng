@@ -1,16 +1,16 @@
 return {
     "neovim/nvim-lspconfig",
     config = function()
-        local lsp = require("lspconfig")
+        --local lsp = vim.lsp.config["lspconfig"]
 
-        lsp.clangd.setup({}) -- C/C++
-        lsp.denols.setup({}) -- JS
-        lsp.jdtls.setup({}) -- Java
-        lsp.jsonls.setup({}) -- JSON
-        lsp.lua_ls.setup({}) -- Lua
-        lsp.html.setup({}) -- HTML
-        lsp.gopls.setup({}) -- Go
-        lsp.pyright.setup({}) -- python
-        lsp.yamlls.setup({}) -- YAML
+        vim.lsp.enable("clangd")
+        vim.lsp.enable("denols")
+        vim.lsp.enable("jdtls")
+        vim.lsp.enable("jsonls")
+        vim.lsp.enable("lua_ls")
+        vim.lsp.enable("html")
+        vim.lsp.enable("gopls")
+        vim.lsp.enable("pyright")
+        vim.lsp.enable("yamlls")
     end
 }
