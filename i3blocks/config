@@ -1,0 +1,29 @@
+#[click]
+#full_text=Click me!
+#command=echo "Got clicked with button $button"
+#color=#F79494
+
+[power]
+command=~/.config/i3blocks/power.sh
+markup=pango
+interval=10
+
+[wwan]
+command=~/.config/i3blocks/netif.sh wwan0 M
+markup=pango
+interval=10
+
+[ethernet]
+command=~/.config/i3blocks/netif.sh eth0 E
+markup=pango
+interval=10
+
+[wifi]
+command=~/.config/i3blocks/netif.sh wlan0 W
+markup=pango
+interval=10
+
+# Update time every 5 seconds
+[time]
+command=date "+%A %d %b v%W %T"
+interval=5

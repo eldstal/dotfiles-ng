@@ -32,3 +32,4 @@ put alacritty/alacritty-color.sh ~/.local/bin/alacritty-color.sh
 ln -sf ~/.alacritty.dark.toml ~/.alacritty.toml
 put tmux.conf ~/.tmux.conf
 put pympress ~/.config/pympress
+put i3blocks ~/.config/i3blocks
