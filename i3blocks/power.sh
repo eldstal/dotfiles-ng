@@ -16,6 +16,9 @@ upower -b | grep 'state:' | awk '{print $2}' | grep -q "discharging" && IS_DISCH
 MARKER="↑"
 [ ${IS_DISCHARGING} -eq 1 ] && MARKER="↓"
 
+TTF=$(upower -b | grep 'time to full:' | sed -re 's/^[^:]+:\s*//')
+TTE=$(upower -b | grep 'time to empty:' | sed -re 's/^[^:]+:\s*//')
+
 
 COLOR="#FF0000"
 
@@ -27,4 +30,4 @@ elif [ $PERCENTAGE -gt 15 ]; then
     COLOR="#FF8080"
 fi
 
-echo "B: ${MARKER} <span foreground=\"${COLOR}\">${PERCENTAGE}</span>"
+echo "B: ${MARKER} <span foreground=\"${COLOR}\">${PERCENTAGE}%</span> ${TTF}${TTE}"
