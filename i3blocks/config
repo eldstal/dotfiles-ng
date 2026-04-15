@@ -23,7 +23,10 @@ command=~/.config/i3blocks/netif.sh wlan0 W
 markup=pango
 interval=10
 
-# Update time every 5 seconds
+[day]
+command=date "+%A v%W %F"
+interval=5
+
 [time]
-command=date "+%A %d %b v%W %T"
+command=date "+%T"
 interval=5
