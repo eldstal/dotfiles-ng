@@ -1,0 +1,12 @@
+#!/bin/bash
+# Certain Lazy plugins will modify their own files
+# and then fail to update because of local changes.
+#
+# No clue why they do this, but it's safe to just nuke the changes.
+
+find ~/.local/share/nvim/lazy -type d -iname '.git' \
+| while read GIT; do
+    REPO=$(dirname "${GIT}")
+    echo "${REPO}"
+    (cd "${REPO}" && git restore .)
+done
