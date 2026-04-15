@@ -22,9 +22,9 @@ TTE=$(upower -b | grep 'time to empty:' | sed -re 's/^[^:]+:\s*//')
 
 COLOR="#FF0000"
 
-if [ $PERCENTAGE -gt 75 ];then
+if [ $PERCENTAGE -gt 60 ];then
     COLOR="#80FF55"
-elif [ $PERCENTAGE -gt 50 ]; then
+elif [ $PERCENTAGE -gt 35 ]; then
     COLOR="#FFFF55"
 elif [ $PERCENTAGE -gt 15 ]; then
     COLOR="#FF8080"
